@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: 'Acrom';
+  src: url('../fonts/Acrom.otf');
+}
+
+$AcromRegular: 'Acrom', Arial, sans-serif;
+$YellowColor: #fff882;
+$RedColor: #ff4f4f;
+$GreenColor: #82ffc0;
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: url('../img/bg.jpg') no-repeat;
+  font: 400 16px $AcromRegular;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eee;
+}
+
+::-webkit-scrollbar-thumb {
+  background: darken(#eee, 15%);
+}
+
+.header {
+  width: 100%;
+  height: 95px;
+  padding: 0 0 0 96px;
+  background: #2a2a2a;
+
+  &__first {
+    // display: none;
+
+    &__menu {
+      display: none;
+      max-width: 320px;
+      text-align: center;
+
+      &__item {
+        display: none;
+
+        &__link, &__title {
+          display: block;
+          transition: all .15s;
+          padding: 14px 0;
+          background: rgba(75,75,75,0.75);
+          font-size: 25px;
+          text-decoration: none;
+          color: #fff;
+
+          &:hover {
+            color: $RedColor;
+            border-left: 3px solid $RedColor;
+          }
+
+          &:first-child {
+            padding: 32.5px 0;
+            color: $YellowColor;
+            background: #111;
+
+            &:hover {
+              border: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__second {
+    height: 95px;
+    width: 100%;
+    max-width: 480px;
+    display: none;
+    position: absolute;
+    margin: 0 0 0 320px;
+    top: 0;
+    text-align: center;
+  
+    &__title {
+      display: block;
+      padding: 32.5px 0;
+      font-size: 25px;
+      color: $GreenColor;
+      background: #111;      
+      text-decoration: none;     
+    }
+
+    &__previews {
+      height: 92vh;
+      max-width: 480px;
+      overflow-y: auto;
+      overflow-x: hidden;
+
+      &__category {
+        display: none;
+
+        &__item {
+          height: 198px;
+          transition: all .5s;
+          background: rgba(75,75,75,0.75);
+          border-bottom: 2px solid #2a2a2a;
+          position: relative;
+
+          &__link {
+            // margin: -204px 0 0 430px;
+            margin: 0px 0 0 -42px;
+            padding: 5px 14px;
+            width: 15px;
+            top: -170px;
+            position: relative;
+            z-index: 10;
+            font-size: 25px;
+            color: #fff;
+            background: #2a2a2a;
+            text-decoration: none;
+            border-left: 2px solid #2a2a2a;
+
+            &:hover {
+              border-left: 2px solid $RedColor;
+            }
+          }
+
+          &__blackoverlay {
+            height: 198px;
+            transition: all .25s;
+            z-index: 1;
+            position: relative;
+            margin-top: -204px;
+            background: rgba(0,0,0,.75);
+
+            &:hover {
+              background: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__third {
+    height: 100%;
+    width: auto;
+    position: absolute;
+    margin-left: 800px;
+    top: 0;
+    text-align: center;
+    color: #fff;
+
+    display: none;
+
+    &__title {
+      display: block;
+      padding: 32.5px 0;
+      font-size: 25px;
+      color: $GreenColor;
+      background: #111;
+      text-decoration: none;
+    }
+
+    &__portfolio {
+      min-height: 90.25%;
+      background: rgba(75, 75, 75, 0.75);
+
+      &__container {
+        &__item {
+          height: 90vh;
+          width: 946px;
+          overflow-y: auto;
+          display: none;
+
+          &__image {
+            margin: 20px 0;
+            max-width: 500px;
+            border-radius: 10px;
+          }
+
+          &__title {
+
+          }
+
+          &__description {
+            padding: 10px 30px;
+            font-size: 20px;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}
+
+.sidebar {
+  width: 96px;
+  position: absolute;
+  top: 0;
+  background: #2a2a2a;
+
+  &__icon {
+    display: block;
+    padding: 33px 30px;
+    transition: all 0.7s;
+  }
+
+  &__nav {
+    display: none;
+
+    &__list {
+      font-size: 25px;
+      list-style-type: none;
+      text-align: center;
+
+      &__item {
+        padding: 15px 0;
+
+        &__link {
+          transition: all .15s;
+          text-decoration: none;
+          color: #c5c5c5;
+
+          &:hover {
+            color: $YellowColor;
+          }
+        }
+
+        &:last-child {
+          & a {
+            color: $RedColor;
+          }
+        }
+      }
+    }
+  }
+}
