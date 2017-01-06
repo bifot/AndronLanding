@@ -1,91 +1,97 @@
 doctype html
-html
+html(lang = "ru")
   head
     title= "Дронька"
 
-    meta(charset="utf-8")
+    meta(charset = "utf-8")
 
-    meta(name="keywords", content="")
-    meta(name="description", content="")
-    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(name = "keywords", content = "")
+    meta(name = "description", content = "")
+    meta(name = "viewport", content = "width=device-width, initial-scale=1")
 
-    link(href = "css/normalize.css", rel="stylesheet")
-    link(href = "css/animate.css", rel="stylesheet")
-    link(href = "css/new.css", rel="stylesheet")
+    link(href = "css/normalize.css", rel = "stylesheet")
+    link(href = "css/animate.css", rel = "stylesheet")
+    link(href = "css/new.css", rel = "stylesheet")
   body
     //- div.promo
     //-   img(src="img/simhoko.gif")
 
     mixin thirdPartPortfolioItem(className, img, title, description)
-      div(class="header__third__portfolio__container__item header__third__portfolio__#{className}__item")
-        img.header__third__portfolio__container__item__image(src= img)
-        h2.header__third__portfolio__container__item__title= title
-        p.header__third__portfolio__container__item__description= description
+      div(class="portfolio-item portfolio-item_#{className}")
+        img(src= img).portfolio-item__image
+        h2.portfolio-item__title= title
+        p.portfolio-item__description= description
 
     div.header
-      div.header__first
-        div.header__first__menu
+      div.first
+        div.menu
 
-          div.header__first__menu__item.header__first__menu__item__design.animated.fadeInLeft
-            a(href="#").header__first__menu__item__title Design
+          div.menu-list.menu-list_design.animated.fadeInLeft
+            a(href="#").menu-list__title Design
 
-            a(href="https://vk.com/addsome").header__first__menu__item__link.header__first__menu__item__link__random random
-            a(href="https://vk.com/addsome").header__first__menu__item__link.header__first__menu__item__link__logos logos
-            a(href="#").header__first__menu__item__link.header__first__menu__item__link__landings landings
-            a(href="#").header__first__menu__item__link.header__first__menu__item__link__illustrations illustrations
+            a(href="https://vk.com/addsome").menu-list__link.menu-list__link_random random
+            a(href="https://vk.com/addsome").menu-list__link.menu-list__link_logos logos
+            a(href="#").menu-list__link.menu-list__link_landings landings
+            a(href="#").menu-list__link.menu-list__link_illustrations illustrations
 
-          div.header__first__menu__item.header__first__menu__item__music.animated.fadeInLeft
-            a(href="#").header__first__menu__item__title Music
+          div.menu-list.menu-list_music.animated.fadeInLeft
+            a(href="#").menu-list__title Music
 
-            a(href="#").header__first__menu__item__link.header__first__menu__item__link__simhoko Simhoko
-            a(href="#").header__first__menu__item__link.header__first__menu__item__link__naarolman Naar Olman
+            a(href="#").menu-list__link.menu-list__link_simhoko Simhoko
+            a(href="#").menu-list__link.menu-list__link_naarolman Naar Olman
 
-          div.header__first__menu__item.header__first__menu__item__music.animated.fadeInLeft
-            a(href="#").header__first__menu__item__title Video
+          div.menu-list.menu-list_music.animated.fadeInLeft
+            a(href="#").menu-list__title Video
 
-            a(href="#").header__first__menu__item__link.header__first__menu__item__link__animation animation
+            a(href="#").menu-list__link.menu-list__link_animation animation
 
-          div.header__first__menu__item.header__first__menu__item__links.animated.fadeInLeft
-            a(href="#").header__first__menu__item__title Links
+          div.menu-list.menu-list_links.animated.fadeInLeft
+            a(href="#").menu-list__title Links
 
-            a(href="#").header__first__menu__item__link.header__first__menu__item__link__add • add
-            a(href="#").header__first__menu__item__link.header__first__menu__item__link__mishanya Mikhail Semin
+            a(href="#").menu-list__link.menu-list__link_add • add
+            a(href="#").menu-list__link.menu-list__link_mishanya Mikhail Semin
 
-          div.header__first__menu__item.header__first__menu__item__chat.animated.fadeInLeft
-            a(href="#").header__first__menu__item__title Chat
+          div.menu-list.menu-list_chat.animated.fadeInLeft
+            a(href="#").menu-list__title Chat
 
-            a(href="#").header__first__menu__item__link.header__first__menu__item__link_andron Andron Makarov
-            a(href="#").header__first__menu__item__link.header__first__menu__item__link__semin Mikhail Semin
+            a(href="#").menu-list__link.menu-list__link_andron Andron Makarov
+            a(href="#").menu-list__link.menu-list__link_semin Mikhail Semin
 
-      div.header__second
-        a(href="#").header__second__title.animated.fadeInLeft Second Part
-        div.header__second__previews.animated.fadeInLeft
-          div.header__second__previews__category.header__second__previews__category__illustrations
+      div.second
+
+        a(href="#").second__title.animated.fadeInLeft Second Part
+
+        div.previews.animated.fadeInLeft
+          div.category-container.category-container_illustrations
             - var illustrations = ["img/logo1.jpg", "img/logo2.jpg", "img/logo3.jpg", "img/logo4.jpg", "img/logo5.jpg", "img/logo6.jpg", "img/logo7.jpg", "img/logo8.jpg", "img/logo9.jpg", "img/logo10.jpg", "img/logo11.jpg", "img/logo12.jpg", "img/logo13.jpg", "img/logo14.jpg", "img/logo15.jpg"];
 
             for illustration in illustrations
-              div.header__second__previews__category__item.header__second__previews__category__item__illustrations
-                img(src="#{illustration}").header__second__previews__category__item__image
-                a(href="#").header__second__previews__category__item__link &gt;
-                div.header__second__previews__category__item__blackoverlay
+              div.category-item.category-item_illustrations
+                img(src="#{illustration}").category-item__image
+                a(href="#").category-item__link &gt;
+                div.category-item__blackoverlay
 
 
-          div.header__second__previews__category.header__second__previews__category__animation
-            div.header__second__previews__category__item__animation
-              p OLOLOLOLOLOLOL
-              a(href="#").header__second__previews__category__item__link &gt;
-              div.header__second__previews__category__item__blackoverlay
+          div.category-container.category-container_animation
+            div.category-item.category-item_animation
+              //- p Test...
+              img(src="").category-item__image
+              a(href="#").category-item__link &gt;
+              div.category-item__blackoverlay
         
-      div.header__third
-        a(href="#").header__third__title.animated.fadeInLeft Third Part
-        div.header__third__portfolio          
-          div.header__third__portfolio__container.header__third__portfolio__random
+      div.third
 
-          div.header__third__portfolio__container.header__third__portfolio__logos
+        a(href="#").third__title.animated.fadeInLeft Third Part
 
-          div.header__third__portfolio__container.header__third__portfolio__landings
+        div.portfolio
 
-          div.header__third__portfolio__container.header__third__portfolio__illustrations
+          div.portfolio-container.portfolio-container_random
+
+          div.portfolio-container.portfolio-container_logos
+
+          div.portfolio-container.portfolio-container_landings
+
+          div.portfolio-container.portfolio-container_illustrations
             +thirdPartPortfolioItem("illustrations", "img/logo1full.png", "Monkey", "Иллюстрация окровавленного шлема с отсылкой к игре DOOM, сочетающая в себе первобытную агрессию. Отдалённо напоминает профиль гориллы.")
             +thirdPartPortfolioItem("illustrations", "img/logo2full.jpg", "Автопортрет", "Изображение себя в привычном состоянии.")
             +thirdPartPortfolioItem("illustrations", "img/logo3full.jpg", "Редис", "Иллюстрация/логотип позитивного растения.")
@@ -106,16 +112,16 @@ html
           
 
     div.sidebar
-      a(href="#").sidebar__icon
+      a(href="#").icon
         img(src="img/menu.png")
       
-      div.sidebar__nav
-        ul.sidebar__nav__list
+      div.navbar
+        ul.navbar-list
           - var menus = ["D", "M", "V", "L", "Chat"];
 
           for menu in menus
-            li.sidebar__nav__list__item
-              a(href="#").sidebar__nav__list__item__link= menu
+            li.navbar-list__item
+              a(href="#").link= menu
   
   script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js")
   script(src="js/app.js")

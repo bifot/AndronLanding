@@ -1,39 +1,42 @@
-var headerFirstMenu = document.querySelector(".header__first__menu");
-var headerFirstMenuItems = document.querySelectorAll(".header__first__menu__item");
-var headerFirstMenuItemLink = document.querySelectorAll(".header__first__menu__item__link");
-var headerFirstMenuItemLinkRandom = document.querySelector(".header__first__menu__item__link__random");
-var headerFirstMenuItemLinkLogos = document.querySelector(".header__first__menu__item__link__logos");
-var headerFirstMenuItemLinkLandings = document.querySelector(".header__first__menu__item__link__landings");
-var headerFirstMenuItemLinkIllustrations = document.querySelector(".header__first__menu__item__link__illustrations");
-var headerFirstMenuItemLinkSimhoko = document.querySelector(".header__first__menu__item__link__simhoko");
-var headerFirstMenuItemLinkNaarOlman = document.querySelector(".header__first__menu__item__link__naarolman");
-var headerFirstMenuItemLinkAnimation = document.querySelector(".header__first__menu__item__link__animation");
-var headerFirstMenuItemLinkAdd = document.querySelector(".header__first__menu__item__link__add");
-var headerFirstMenuItemLinkMishanya = document.querySelector(".header__first__menu__item__link__mishanya");
-var headerFirstMenuItemLinkAndron = document.querySelector(".header__first__menu__item__link_andron");
-var headerFirstMenuItemLinkSemin = document.querySelector(".header__first__menu__item__link__semin");
+var first = document.querySelector(".first");
+var second = document.querySelector(".second");
+var third = document.querySelector(".third");
 
-var headerSecond = document.querySelector(".header__second");
-var headerSecondPreviewsCategory = document.querySelectorAll(".header__second__previews__category");
-var headerSecondPreviewsCategoryIllustrations = document.querySelector(".header__second__previews__category__illustrations");
-var headerSecondPreviewsCategoryAnimation = document.querySelector(".header__second__previews__category__animation");
-var headerSecondPreviewsCategoryItem = document.querySelectorAll(".header__second__previews__category__item");
-var headerSecondPreviewsCategoryItemsIllustrations = document.querySelectorAll(".header__second__previews__category__item__illustrations");
-var headerSecondPreviewsCategoryItemsAnimation = document.querySelectorAll(".header__second__previews__category__item__animation");
-var headerSecondPreviewsCategoryItemLink = document.querySelectorAll(".header__second__previews__category__item__link");
-var headerSecondPreviewsCategories = document.querySelectorAll(".header__second__previews__category");
+var menu = document.querySelector(".menu");
+var menuList = document.querySelectorAll(".menu-list");
+var menuItemLinks = document.querySelectorAll(".menu-list__link");
+var menuItemLinkRandom = document.querySelector(".menu-list__link_random");
+var menuItemLinkLogos = document.querySelector(".menu-list__link_logos");
+var menuItemLinkLandings = document.querySelector(".menu-list__link_landings");
+var menuItemLinkIllustrations = document.querySelector(".menu-list__link_illustrations");
+var menuItemLinkSimhoko = document.querySelector(".menu-list__link_simhoko");
+var menuItemLinkNaarolman = document.querySelector(".menu-list__link_naarolman");
+var menuItemLinkAnimation = document.querySelector(".menu-list__link_animation");
+var menuItemLinkAdd = document.querySelector(".menu-list__link_add");
+var menuItemLinkMishanya = document.querySelector(".menu-list__link_mishanya");
+var menuItemLinkAndron = document.querySelector(".menu-list__link_andron");
+var menuItemLinkSemin = document.querySelector(".menu-list__link_semin");
 
-var headerThird = document.querySelector(".header__third");
-var headerThirdPortfolioContainerItem = document.querySelectorAll(".header__third__portfolio__container__item");
-var headerThirdPortfolioIllustrationsItem = document.querySelectorAll(".header__third__portfolio__illustrations__item");
-var headerThirdPortfolioAnimationItem = document.querySelectorAll(".header__third__portfolio__animation__item");
+var categoryContainer = document.querySelectorAll(".category-container");
+var categoryContainerIllustrations = document.querySelector(".category-container_illustrations");
+var categoryContainerAnimation = document.querySelector(".category-container_animation");
+var categoryItem = document.querySelectorAll(".category-item");
+var categoryItemIllustrations = document.querySelectorAll(".category-item_illustrations");
+var categoryItemAnimation = document.querySelectorAll(".category-item_animation");
+var categoryItemLink = document.querySelectorAll(".category-item_link");
+
+var portfolioItem = document.querySelectorAll(".portfolio-item");
+var portfolioItemIllustrations = document.querySelectorAll(".portfolio-item_illustrations");
+var portfolioItemAnimation = document.querySelectorAll(".portfolio-item_animation");
 
 var sidebar = document.querySelector(".sidebar");
-var sidebarIcon = document.querySelector(".sidebar__icon");
-var sidebarNav = document.querySelector(".sidebar__nav");
-var sidebarNavList = document.querySelector(".sidebar__nav__list");
-var sidebarNavListItem = document.querySelectorAll(".sidebar__nav__list__item");
-var sidebarNavListItemLink = document.querySelectorAll(".sidebar__nav__list__item__link");
+var icon = document.querySelector(".icon");
+
+var navbar = document.querySelector(".navbar");
+var navbarList = document.querySelector(".navbar-list");
+var navbarListItem = document.querySelectorAll(".navbar-list__item");
+
+var links = document.querySelectorAll(".link");
 
 function fadeOut(el) {
   el.style.opacity = 1;
@@ -58,79 +61,82 @@ function fadeIn(el, display) {
 }
 
 function showFirstPartMenu(item) {
-  for (var i = 0; i < headerFirstMenuItems.length; i++) { 
-    headerFirstMenuItems[i].style.display = "none";
+  for (var i = 0; i < menuList.length; i++) { 
+    menuList[i].style.display = "none";
   }
 
-  headerFirstMenu.style.display = "block";
-  headerFirstMenuItems[item].style.display = "block";
+  menu.style.display = "block";
+  menuList[item].style.display = "block";
 
-  headerSecond.style.display = "none";
-  headerThird.style.display = "none";
+  second.style.display = "none";
+  third.style.display = "none";
 }
 
 function showSecondPartMenu(item) {
-  for (var i = 0, j = headerSecondPreviewsCategories.length; i < j; i++) { 
-    headerSecondPreviewsCategories[i].style.display = "none";
+  for (var i = 0, j = categoryContainer.length; i < j; i++) { 
+    categoryContainer[i].style.display = "none";
   }
 
-  headerSecond.style.display = "block";
+  second.style.display = "block";
   item.style.display = "block";
 }
 
 function showThirdPartMenu(category, item) {
-  for (var i = 0, j = headerThirdPortfolioContainerItem.length; i < j; i++) {
-    headerThirdPortfolioContainerItem[i].style.display = "none";
+  for (var i = 0, j = portfolioItem.length; i < j; i++) {
+    portfolioItem[i].style.display = "none";
   }
 
-  fadeIn(headerThird);
+  fadeIn(third);
   fadeIn(category[item]);
 }
 
-sidebarIcon.addEventListener("click", function() {
-  if (sidebarNav.style.display == "block") {
+icon.addEventListener("click", function() {
+  if (navbar.style.display == "block") {
     this.style.transform = "rotate(0deg)";
     this.style.margin = "0";
 
     sidebar.style.height = "95px";
-    sidebarNav.style.display = "none";
-    sidebarNavList.style.display = "none";
 
-    headerFirstMenu.style.display = "none";
-    headerSecond.style.display = "none";
-    headerThird.style.display = "none";    
+    navbar.style.display = "none";
+    navbarList.style.display = "none";
+
+    menu.style.display = "none";
+
+    second.style.display = "none";
+    third.style.display = "none";    
   } else {
     this.style.transform = "rotate(90deg)";
     this.style.margin = "9px 0 0 -6px";
 
     sidebar.style.height = "100%";
-    sidebarNav.style.display = "block";
-    sidebarNavList.style.display = "block";
+
+    navbar.style.display = "block";
+    navbarList.style.display = "block";
   }
 });
 
 // First Part Menu
 
-$(sidebarNavListItem).on("click", function() {
+$(navbarListItem).on("click", function() {
   showFirstPartMenu($(this).index());
 });
 
 // Second Part Menu
 
-$(headerFirstMenuItemLinkIllustrations).on("click", function() {
-  showSecondPartMenu(headerSecondPreviewsCategoryIllustrations);
+$(menuItemLinkIllustrations).on("click", function() {
+  showSecondPartMenu(categoryContainerIllustrations);
 });
 
-$(headerFirstMenuItemLinkAnimation).on("click", function() {
-  showSecondPartMenu(headerSecondPreviewsCategoryAnimation);
+$(menuItemLinkAnimation).on("click", function() {
+  showSecondPartMenu(categoryContainerAnimation);
 });
 
 // Third Part Menu
 
-$(headerSecondPreviewsCategoryItemsIllustrations).on("click", function() {
-  showThirdPartMenu(headerThirdPortfolioIllustrationsItem, $(this).index());
+$(categoryItemIllustrations).on("click", function() {
+  showThirdPartMenu(portfolioItemIllustrations, $(this).index());
 });
 
-$(headerSecondPreviewsCategoryItemsAnimation).on("click", function() {
-  showThirdPartMenu(headerThirdPortfolioAnimationItem, $(this).index());
+$(categoryItemAnimation).on("click", function() {
+  showThirdPartMenu(portfolioItemAnimation, $(this).index());
 });

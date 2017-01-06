@@ -5,6 +5,7 @@
 
 @font-face {
   font-family: 'Acrom';
+
   src: url('../fonts/Acrom.otf');
 }
 
@@ -15,13 +16,15 @@ $GreenColor: #82ffc0;
 
 html,
 body {
-  height: 100%;
   overflow: hidden;
+
+  height: 100%;
 }
 
 body {
-  background: url('../img/bg.jpg') no-repeat;
   font: 400 16px $AcromRegular;
+
+  background: url('../img/bg.jpg') no-repeat;
 }
 
 img {
@@ -45,208 +48,248 @@ img {
   width: 100%;
   height: 95px;
   padding: 0 0 0 96px;
+
   background: #2a2a2a;
+}
 
-  &__first {
-    // display: none;
+.first {
+  // display: none;
+}
 
-    &__menu {
-      display: none;
-      max-width: 320px;
-      text-align: center;
+.menu {
+  display: none;
 
-      &__item {
-        display: none;
+  max-width: 320px;
 
-        &__link, &__title {
-          display: block;
-          transition: all .15s;
-          padding: 14px 0;
-          background: rgba(75,75,75,0.75);
-          font-size: 25px;
-          text-decoration: none;
-          color: #fff;
+  text-align: center;
+}
 
-          &:hover {
-            color: $RedColor;
-            border-left: 3px solid $RedColor;
-          }
-
-          &:first-child {
-            padding: 32.5px 0;
-            color: $YellowColor;
-            background: #111;
-
-            &:hover {
-              border: 0;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  &__second {
-    height: 95px;
-    width: 100%;
-    max-width: 480px;
-    display: none;
-    position: absolute;
-    margin: 0 0 0 320px;
-    top: 0;
-    text-align: center;
+.menu-list {
+  display: none;
   
-    &__title {
-      display: block;
-      padding: 32.5px 0;
-      font-size: 25px;
-      color: $GreenColor;
-      background: #111;      
-      text-decoration: none;     
-    }
+  &__title,
+  &__link {
+    font-size: 25px;
 
-    &__previews {
-      height: 92vh;
-      max-width: 480px;
-      overflow-y: auto;
-      overflow-x: hidden;
+    display: block;
 
-      &__category {
-        display: none;
+    padding: 14px 0;
 
-        &__item {
-          height: 198px;
-          transition: all .5s;
-          background: rgba(75,75,75,0.75);
-          border-bottom: 2px solid #2a2a2a;
-          position: relative;
+    transition: all .15s;
+    text-decoration: none;
 
-          &__link {
-            // margin: -204px 0 0 430px;
-            margin: 0px 0 0 -42px;
-            padding: 5px 14px;
-            width: 15px;
-            top: -170px;
-            position: relative;
-            z-index: 10;
-            font-size: 25px;
-            color: #fff;
-            background: #2a2a2a;
-            text-decoration: none;
-            border-left: 2px solid #2a2a2a;
-
-            &:hover {
-              border-left: 2px solid $RedColor;
-            }
-          }
-
-          &__blackoverlay {
-            height: 198px;
-            transition: all .25s;
-            z-index: 1;
-            position: relative;
-            margin-top: -204px;
-            background: rgba(0,0,0,.75);
-
-            &:hover {
-              background: transparent;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  &__third {
-    height: 100%;
-    width: auto;
-    position: absolute;
-    margin-left: 800px;
-    top: 0;
-    text-align: center;
     color: #fff;
+    background: rgba(75,75,75,.75);
 
-    display: none;
-
-    &__title {
-      display: block;
-      padding: 32.5px 0;
-      font-size: 25px;
-      color: $GreenColor;
-      background: #111;
-      text-decoration: none;
+    &:hover {
+      color: $RedColor;
+      border-left: 3px solid $RedColor;
     }
 
-    &__portfolio {
-      min-height: 90.25%;
-      background: rgba(75, 75, 75, 0.75);
+    &:first-child {
+      padding: 32.5px 0;
 
-      &__container {
-        &__item {
-          height: 90vh;
-          width: 946px;
-          overflow-y: auto;
-          display: none;
+      color: $YellowColor;
+      background: #111;
 
-          &__image {
-            margin: 20px 0;
-            max-width: 500px;
-            border-radius: 10px;
-          }
-
-          &__title {
-
-          }
-
-          &__description {
-            padding: 10px 30px;
-            font-size: 20px;
-            text-align: left;
-          }
-        }
+      &:hover {
+        border: 0;
       }
     }
   }
 }
 
-.sidebar {
-  width: 96px;
+.second {
   position: absolute;
   top: 0;
-  background: #2a2a2a;
 
-  &__icon {
+  display: none;
+
+  width: 100%;
+  max-width: 480px;
+  height: 95px;
+  margin: 0 0 0 320px;
+
+  text-align: center;
+
+  &__title {
+    font-size: 25px;
+
     display: block;
-    padding: 33px 30px;
-    transition: all 0.7s;
+
+    padding: 32.5px 0;
+
+    text-decoration: none;
+
+    color: $GreenColor;
+    background: #111;
+  }
+}
+
+.previews {
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  max-width: 480px;
+  height: 92vh;
+}
+
+.category-container {
+  display: none;
+}
+
+.category-item {
+  position: relative;
+
+  height: 198px;
+
+  transition: all .5s;
+
+  border-bottom: 2px solid #2a2a2a;
+  background: rgba(75,75,75,.75);
+
+  &__link {
+    font-size: 25px;
+
+    position: relative;
+    z-index: 10;
+    top: -170px;
+
+    width: 15px;
+    // margin: -204px 0 0 430px;
+    margin: 0 0 0 -42px;
+    padding: 5px 14px;
+
+    text-decoration: none;
+
+    color: #fff;
+    border-left: 2px solid #2a2a2a;
+    background: #2a2a2a;
+
+    &:hover {
+      border-left: 2px solid $RedColor;
+    }
   }
 
-  &__nav {
-    display: none;
+  &__blackoverlay {
+    position: relative;
+    z-index: 1;
 
-    &__list {
-      font-size: 25px;
-      list-style-type: none;
-      text-align: center;
+    height: 198px;
+    margin-top: -204px;
 
-      &__item {
-        padding: 15px 0;
+    transition: all .25s;
 
-        &__link {
-          transition: all .15s;
-          text-decoration: none;
-          color: #c5c5c5;
+    background: rgba(0,0,0,.75);
 
-          &:hover {
-            color: $YellowColor;
-          }
-        }
+    &:hover {
+      background: transparent;
+    }
+  }
+}
 
-        &:last-child {
-          & a {
-            color: $RedColor;
-          }
-        }
+.third {
+  position: absolute;
+  top: 0;
+
+  display: none;
+
+  width: auto;
+  height: 100%;
+  margin-left: 800px;
+
+  text-align: center;
+
+  color: #fff;
+
+  &__title {
+    font-size: 25px;
+
+    display: block;
+
+    padding: 32.5px 0;
+
+    text-decoration: none;
+
+    color: $GreenColor;
+    background: #111;
+  }
+}
+
+.portfolio {
+  min-height: 90.25%;
+
+  background: rgba(75, 75, 75, .75);
+}
+
+.portfolio-item {
+  display: none;
+  overflow-y: auto;
+
+  width: 946px;
+  height: 90vh;
+
+  &__image {
+    max-width: 500px;
+    margin: 20px 0;
+
+    border-radius: 10px;
+  }
+
+  &__description {
+    font-size: 20px;
+
+    padding: 10px 30px;
+
+    text-align: left;
+  }
+}
+
+.sidebar {
+  position: absolute;
+  top: 0;
+
+  width: 96px;
+
+  background: #2a2a2a;
+}
+
+.icon {
+  display: block;
+
+  padding: 33px 30px;
+
+  transition: all .7s;
+}
+
+.navbar {
+  display: none;
+}
+
+.navbar-list {
+  font-size: 25px;
+
+  list-style-type: none;
+
+  text-align: center;
+
+  &__item {
+    padding: 15px 0;
+
+    & .link {
+      transition: all .15s;
+      text-decoration: none;
+
+      color: #c5c5c5;
+
+      &:hover {
+        color: $YellowColor;
+      }
+    }
+
+    &:last-child {
+      .link {
+        color: $RedColor;
       }
     }
   }
