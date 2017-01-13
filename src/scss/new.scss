@@ -22,7 +22,7 @@ body {
 }
 
 body {
-  font: 400 16px $AcromRegular;
+  font: 400 16px/18px $AcromRegular;
 
   background: url('../img/bg.jpg') no-repeat;
 }
@@ -52,6 +52,20 @@ img {
   background: #2a2a2a;
 }
 
+.title {
+  font-size: 25px;
+
+  display: block;
+
+  padding: 38px 0;
+
+  transition: all .15s;
+  text-decoration: none;
+
+  color: #fff;
+  background: rgba(0, 0, 0, 0.75);
+}
+
 .first {
   // display: none;
 }
@@ -62,39 +76,44 @@ img {
   max-width: 320px;
 
   text-align: center;
-}
 
-.menu-list {
-  display: none;
-  
-  &__title,
+  &__list {
+    display: block;
+  }
+
   &__link {
     font-size: 25px;
 
     display: block;
 
-    padding: 14px 0;
+    padding: 20px 0;
 
     transition: all .15s;
     text-decoration: none;
 
     color: #fff;
-    background: rgba(75,75,75,.75);
+    background: rgba(75, 75, 75, .75);
 
     &:hover {
       color: $RedColor;
       border-left: 3px solid $RedColor;
     }
+  }
 
-    &:first-child {
-      padding: 32.5px 0;
+  &__title {
+    font-size: 25px;
 
-      color: $YellowColor;
-      background: #111;
+    display: block;
 
-      &:hover {
-        border: 0;
-      }
+    padding: 38px 0;
+
+    text-decoration: none;
+
+    color: $YellowColor;
+    background: rgba(0, 0, 0, 0.75);
+
+    &:hover {
+      border: 0;
     }
   }
 }
@@ -111,19 +130,6 @@ img {
   margin: 0 0 0 320px;
 
   text-align: center;
-
-  &__title {
-    font-size: 25px;
-
-    display: block;
-
-    padding: 32.5px 0;
-
-    text-decoration: none;
-
-    color: $GreenColor;
-    background: #111;
-  }
 }
 
 .previews {
@@ -132,21 +138,21 @@ img {
 
   max-width: 480px;
   height: 92vh;
-}
 
-.category-container {
-  display: none;
-}
+  &__container {
+    display: none;
+  }
 
-.category-item {
-  position: relative;
+  &__item {
+    position: relative;
 
-  height: 198px;
+    height: 198px;
 
-  transition: all .5s;
+    transition: all .5s;
 
-  border-bottom: 2px solid #2a2a2a;
-  background: rgba(75,75,75,.75);
+    border-bottom: 2px solid #2a2a2a;
+    background: rgba(75,75,75,.75);
+  }
 
   &__link {
     font-size: 25px;
@@ -165,7 +171,6 @@ img {
     color: #fff;
     border-left: 2px solid #2a2a2a;
     background: #2a2a2a;
-
     &:hover {
       border-left: 2px solid $RedColor;
     }
@@ -175,7 +180,7 @@ img {
     position: relative;
     z-index: 1;
 
-    height: 198px;
+    height: 200px;
     margin-top: -204px;
 
     transition: all .25s;
@@ -201,33 +206,20 @@ img {
   text-align: center;
 
   color: #fff;
-
-  &__title {
-    font-size: 25px;
-
-    display: block;
-
-    padding: 32.5px 0;
-
-    text-decoration: none;
-
-    color: $GreenColor;
-    background: #111;
-  }
 }
 
 .portfolio {
   min-height: 90.25%;
 
   background: rgba(75, 75, 75, .75);
-}
 
-.portfolio-item {
-  display: none;
-  overflow-y: auto;
+  &__item {
+    display: none;
+    overflow-y: auto;
 
-  width: 946px;
-  height: 90vh;
+    width: 946px;
+    height: 90vh;
+  }
 
   &__image {
     max-width: 500px;
@@ -264,33 +256,31 @@ img {
 
 .navbar {
   display: none;
-}
 
-.navbar-list {
-  font-size: 25px;
+  &__list {
+    font-size: 25px;
 
-  list-style-type: none;
+    list-style-type: none;
 
-  text-align: center;
+    text-align: center;
+  }
 
   &__item {
     padding: 15px 0;
 
-    & .link {
-      transition: all .15s;
-      text-decoration: none;
-
-      color: #c5c5c5;
-
-      &:hover {
-        color: $YellowColor;
-      }
+    &:last-child a {
+      color: $RedColor;
     }
+  }
 
-    &:last-child {
-      .link {
-        color: $RedColor;
-      }
+  &__link {
+    transition: all .15s;
+    text-decoration: none;
+
+    color: #c5c5c5;
+
+    &:hover {
+      color: $YellowColor;
     }
   }
 }

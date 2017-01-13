@@ -3,40 +3,43 @@ var second = document.querySelector(".second");
 var third = document.querySelector(".third");
 
 var menu = document.querySelector(".menu");
-var menuList = document.querySelectorAll(".menu-list");
-var menuItemLinks = document.querySelectorAll(".menu-list__link");
-var menuItemLinkRandom = document.querySelector(".menu-list__link_random");
-var menuItemLinkLogos = document.querySelector(".menu-list__link_logos");
-var menuItemLinkLandings = document.querySelector(".menu-list__link_landings");
-var menuItemLinkIllustrations = document.querySelector(".menu-list__link_illustrations");
-var menuItemLinkSimhoko = document.querySelector(".menu-list__link_simhoko");
-var menuItemLinkNaarolman = document.querySelector(".menu-list__link_naarolman");
-var menuItemLinkAnimation = document.querySelector(".menu-list__link_animation");
-var menuItemLinkAdd = document.querySelector(".menu-list__link_add");
-var menuItemLinkMishanya = document.querySelector(".menu-list__link_mishanya");
-var menuItemLinkAndron = document.querySelector(".menu-list__link_andron");
-var menuItemLinkSemin = document.querySelector(".menu-list__link_semin");
+var menuList = document.querySelectorAll(".menu__list");
+var menuLink = document.querySelectorAll(".menu__link");
+var menuLinkRandom = document.querySelector(".menu__link--random");
+var menuLinkLogos = document.querySelector(".menu__link--logos");
+var menuLinkLandings = document.querySelector(".menu__link--landings");
+var menuLinkIllustrations = document.querySelector(".menu__link--illustrations");
+var menuLinkSimhoko = document.querySelector(".menu__link--simhoko");
+var menuLinkNaarolman = document.querySelector(".menu__link--naarolman");
+var menuLinkAnimation = document.querySelector(".menu__link--animation");
+var menuLinkAdd = document.querySelector(".menu__link--add");
+var menuLinkMishanya = document.querySelector(".menu__link--mishanya");
+var menuLinkAndron = document.querySelector(".menu__link--andron");
+var menuLinkSemin = document.querySelector(".menu__link--semin");
 
-var categoryContainer = document.querySelectorAll(".category-container");
-var categoryContainerIllustrations = document.querySelector(".category-container_illustrations");
-var categoryContainerAnimation = document.querySelector(".category-container_animation");
-var categoryItem = document.querySelectorAll(".category-item");
-var categoryItemIllustrations = document.querySelectorAll(".category-item_illustrations");
-var categoryItemAnimation = document.querySelectorAll(".category-item_animation");
-var categoryItemLink = document.querySelectorAll(".category-item_link");
+var portfolioContainer = document.querySelectorAll(".portfolio__container");
+var portfolioContainerIllustrations = document.querySelector(".portfolio__container--illustrations");
+var portfolioContainerAnimation = document.querySelector(".portfolio__container--animation");
+var portfolioItem = document.querySelectorAll(".portfolio__item");
+var portfolioItemIllustrations = document.querySelectorAll(".portfolio__item--illustrations");
+var portfolioItemAnimation = document.querySelectorAll(".portfolio__item--animation");
 
-var portfolioItem = document.querySelectorAll(".portfolio-item");
-var portfolioItemIllustrations = document.querySelectorAll(".portfolio-item_illustrations");
-var portfolioItemAnimation = document.querySelectorAll(".portfolio-item_animation");
+var previewsLink = document.querySelectorAll(".previews__link");
+var previewsContainer = document.querySelectorAll(".previews__container");
+var previewsContainerIllustrations = document.querySelector(".previews__container--illustrations");
+var previewsContainerAnimation = document.querySelector(".previews__container--animation");
+var previewsItem = document.querySelectorAll(".previews__item");
+var previewsItemIllustrations = document.querySelectorAll(".previews__item--illustrations");
+var previewsItemAnimation = document.querySelectorAll(".previews__item--animation");
 
 var sidebar = document.querySelector(".sidebar");
 var icon = document.querySelector(".icon");
 
 var navbar = document.querySelector(".navbar");
-var navbarList = document.querySelector(".navbar-list");
-var navbarListItem = document.querySelectorAll(".navbar-list__item");
+var navbarList = document.querySelector(".navbar__list");
+var navbarItem = document.querySelectorAll(".navbar__item");
 
-var links = document.querySelectorAll(".link");
+var link = document.querySelectorAll(".link");
 
 function fadeOut(el) {
   el.style.opacity = 1;
@@ -61,32 +64,33 @@ function fadeIn(el, display) {
 }
 
 function showFirstPartMenu(item) {
-  for (var i = 0; i < menuList.length; i++) { 
+  for (var i = 0, j = menuList.length; i < j; i++) { 
     menuList[i].style.display = "none";
   }
 
-  menu.style.display = "block";
-  menuList[item].style.display = "block";
+  fadeIn(menu);
+  fadeIn(menuList[item]);
 
   second.style.display = "none";
   third.style.display = "none";
 }
 
 function showSecondPartMenu(item) {
-  for (var i = 0, j = categoryContainer.length; i < j; i++) { 
-    categoryContainer[i].style.display = "none";
+  for (var i = 0, j = previewsContainer.length; i < j; i++) { 
+    previewsContainer[i].style.display = "none";
   }
 
   second.style.display = "block";
   item.style.display = "block";
 }
 
-function showThirdPartMenu(category, item) {
+function showThirdPartMenu(container, category, item) {
   for (var i = 0, j = portfolioItem.length; i < j; i++) {
     portfolioItem[i].style.display = "none";
   }
 
   fadeIn(third);
+  fadeIn(container);
   fadeIn(category[item]);
 }
 
@@ -117,26 +121,26 @@ icon.addEventListener("click", function() {
 
 // First Part Menu
 
-$(navbarListItem).on("click", function() {
+$(navbarItem).on("click", function() {
   showFirstPartMenu($(this).index());
 });
 
 // Second Part Menu
 
-$(menuItemLinkIllustrations).on("click", function() {
-  showSecondPartMenu(categoryContainerIllustrations);
+$(menuLinkIllustrations).on("click", function() {
+  showSecondPartMenu(previewsContainerIllustrations);
 });
 
-$(menuItemLinkAnimation).on("click", function() {
-  showSecondPartMenu(categoryContainerAnimation);
+$(menuLinkAnimation).on("click", function() {
+  showSecondPartMenu(previewsContainerAnimation);
 });
 
 // Third Part Menu
 
-$(categoryItemIllustrations).on("click", function() {
-  showThirdPartMenu(portfolioItemIllustrations, $(this).index());
+$(previewsItemIllustrations).on("click", function() {
+  showThirdPartMenu(portfolioContainerIllustrations, portfolioItemIllustrations, $(this).index());
 });
 
-$(categoryItemAnimation).on("click", function() {
-  showThirdPartMenu(portfolioItemAnimation, $(this).index());
+$(previewsItemAnimation).on("click", function() {
+  showThirdPartMenu(portfolioContainerAnimation, portfolioItemAnimation, $(this).index());
 });
